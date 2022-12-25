@@ -1,0 +1,64 @@
+#include<stdio.h>
+int prim(int a)
+{
+	int i,count=0;
+	for(i=2;i<=a/2;i++)
+	{
+		if(a%i==0)
+		{
+			count++;
+		}
+	}
+    return count;
+}
+void main()
+{
+	int ch;
+	printf("1.primality check\n");
+	printf("2.primes in a range\n");
+	printf("3.composites in a range\n");
+	scanf("%d",&ch);
+	if(ch==1)
+	{
+		printf("enter the number to check prime");
+		int num,a;
+		scanf("%d",&num);
+		a=prim(num);
+		if(a==0)
+		{
+			printf("prime");
+		}
+		else
+		{
+			printf("not prime");
+		}
+	}
+	else if(ch==2)
+	{
+		printf("enter the range of primes");
+		int n,c,i,b;
+		scanf("%d%d",&n,&c);
+		for(i=n;i<=c;i++)
+		{
+			b=prim(i);
+			if(b==0)
+			{
+				printf("%d ",i);
+			}
+		}
+	}
+	else
+	{
+		printf("enter the range of composite number");
+		int x,y,i,z;
+		scanf("%d%d",&x,&y);
+		for(i=x;i<=y;i++)
+		{
+			z=prim(i);
+			if(z!=0)
+			{
+				printf("%d ",i);
+			}
+		}
+	}
+}
