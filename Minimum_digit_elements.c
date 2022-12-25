@@ -1,0 +1,49 @@
+#include<stdio.h>
+int main()
+{
+    int n,i;
+    scanf("%d",&n);
+    int arr[n];
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+    }
+    int a,count,min=20,c=0;
+    for(i=0;i<n;i++)
+    {
+        count=0;
+        a=arr[i];
+        if(a==0)
+        {
+            count++;
+        }
+        while(a)
+        {
+            count++;
+            a=a/10;
+        }
+        if(min>count)
+        {
+            min=count;
+        }
+    }
+    for(i=0;i<n;i++)
+    {
+        count=0;
+        a=arr[i];
+        if(a==0)
+        {
+            count++;
+        }
+        while(a)
+        {
+            count++;
+            a=a/10;
+        }
+        if(count==min)
+        {
+            c++;
+        }
+    }
+    printf("%d",c);
+}
